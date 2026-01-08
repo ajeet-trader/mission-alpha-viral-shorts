@@ -21,7 +21,7 @@ feedparser==6.0.11
 langchain==0.1.6
 langchain-google-genai==0.0.6
 # crewai==0.1.26  # Optional - not needed for TTS testing
-openai==1.10.0
+openai>=1.10.0
 groq>=0.4.0
 
 # TTS Providers
@@ -52,16 +52,16 @@ numpy==1.26.3
 # Audio utilities
 mutagen>=1.47.0
 
-# Database
-supabase==2.3.0
+# Database (optional - not needed for TTS testing)
+# supabase==2.3.0
 
 # Scheduling
 APScheduler==3.10.4
 
-# YouTube upload
-google-auth-oauthlib==1.2.0
-google-api-python-client==2.116.0
+# YouTube upload (optional)
+# google-auth-oauthlib==1.2.0
+# google-api-python-client==2.116.0
 
 # Utilities
 python-multipart==0.0.6
-httpx==0.26.0
+httpx>=0.24.0
