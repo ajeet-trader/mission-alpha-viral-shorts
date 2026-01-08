@@ -1,0 +1,51 @@
+# Gemini AI Agent - Files to Ignore
+# This prevents Gemini from viewing sensitive files
+
+# Environment variables and secrets
+.env
+.env.*
+*.env
+!.env.example
+
+# API credentials
+**/client_secrets.json
+**/credentials.json
+**/*_token.json
+**/.credentials/
+
+# Private keys
+*.pem
+*.key
+*.p12
+*.pfx
+
+# Database files (may contain sensitive data)
+*.db
+*.sqlite
+*.sqlite3
+
+# Logs (may contain sensitive info)
+*.log
+logs/
+
+# Personal notes
+NOTES.md
+TODO.md
+personal/
+
+# Backup files
+*.bak
+*.backup
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# IDE settings (may contain paths with usernames)
+.vscode/settings.json
+.idea/
+
+# Any file with "secret" or "private" in name
+*secret*
+*private*
+*password*

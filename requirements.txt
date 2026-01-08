@@ -1,0 +1,47 @@
+# Mission Alpha v2 - Dependencies
+
+# Core
+fastapi==0.109.0
+uvicorn[standard]==0.27.0
+pydantic==2.6.0
+pydantic-settings==2.1.0
+python-dotenv==1.0.0
+pyyaml==6.0.1
+
+# Rich logging & visibility
+rich==13.7.0
+
+# Content scraping
+praw==7.7.1
+beautifulsoup4==4.12.3
+requests==2.31.0
+feedparser==6.0.11
+
+# AI Providers
+langchain==0.1.6
+langchain-google-genai==0.0.6
+crewai==0.1.26
+openai==1.10.0
+
+# TTS
+gTTS==2.5.0
+elevenlabs==0.2.26
+
+# Video processing
+moviepy==1.0.3
+Pillow==10.2.0
+numpy==1.26.3
+
+# Database
+supabase==2.3.0
+
+# Scheduling
+APScheduler==3.10.4
+
+# YouTube upload
+google-auth-oauthlib==1.2.0
+google-api-python-client==2.116.0
+
+# Utilities
+python-multipart==0.0.6
+httpx==0.26.0

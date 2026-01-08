@@ -1,0 +1,125 @@
+# ============================================
+# MISSION ALPHA - MODULAR CONFIGURATION
+# Change providers here, zero code changes!
+# ============================================
+
+# Application Settings
+app:
+  name: "Mission Alpha - Shorts Factory"
+  version: "2.0"
+  debug: true  # Set to false in production
+
+# Logging & Visibility
+logging:
+  level: "INFO"  # DEBUG | INFO | WARNING | ERROR
+  show_progress: true
+  colorize: true  # Rich console output
+  log_file: "logs/factory.log"
+
+# Content Providers (choose any)
+content:
+  provider: quotes  # reddit | quotes | facts
+  fallback: quotes
+  
+  # Provider-specific settings
+  reddit:
+    subreddits:
+      - india
+      - IndiaSpeaks
+      - IndianStories
+    min_upvotes: 100
+    limit: 10
+  
+  quotes:
+    categories:
+      - motivational
+      - inspirational
+    limit: 10
+
+# AI Provider (SWAP ENTIRE AI STACK HERE!)
+ai:
+  provider: groq  # groq | langchain | openai_direct
+  model: gemini-2.5-flash  # Only used if langchain
+  temperature: 0.7
+  
+  # Multi-agent config (only used if provider=crewai)
+  multi_agent:
+    enabled: true
+    agents:
+      - researcher
+      - scriptwriter
+      - critic
+    
+  # Fallback chain (if primary fails)
+  fallback:
+    - langchain     # Gemini (backup)
+    - openai_direct # Paid fallback (needs pip install openai)
+
+# TTS Provider (edge_tts for natural voice!)
+tts:
+  provider: edge_tts  # gtts | elevenlabs | edge_tts
+  language: hi-male  # hi=Hindi female, hi-male=Hindi male (sounds better)
+  slow: false
+  
+  # ElevenLabs config (only if provider=elevenlabs)
+  elevenlabs:
+    voice: "Bella"
+    model: "eleven_multilingual_v2"
+
+# Video Provider
+video:
+  provider: moviepy  # moviepy | ffmpeg_direct
+  resolution: "1080x1920"  # Portrait for Shorts
+  fps: 30
+  
+  background:
+    source: pexels  # pexels | unsplash | local
+    categories:
+      - satisfying
+      - nature
+      - abstract
+    cache_dir: "cache/backgrounds"
+  
+  captions:
+    enabled: true
+    style: word_by_word  # word_by_word | sentence | phrase
+    font: Arial
+    font_size: 60
+    color: "#FFFFFF"
+    stroke_color: "#000000"
+    stroke_width: 2
+
+# Upload Provider
+upload:
+  provider: youtube  # youtube | tiktok | none
+  
+  youtube:
+    category: "22"  # People & Blogs
+    privacy: "public"  # public | private | unlisted
+    tags:
+      - shorts
+      - viral
+      - india
+  
+# Database Provider
+database:
+  provider: sqlite  # supabase | sqlite | postgres
+  
+  supabase:
+    url: "${SUPABASE_URL}"
+    key: "${SUPABASE_KEY}"
+  
+  sqlite:
+    db_path: "data/factory.db"
+
+# Orchestration
+orchestration:
+  enabled: false  # Will enable n8n later
+  provider: n8n  # n8n | airflow | none
+
+# Output Directories
+output:
+  base_dir: "output"
+  audio_dir: "output/audio"
+  video_dir: "output/videos"
+  temp_dir: "output/temp"

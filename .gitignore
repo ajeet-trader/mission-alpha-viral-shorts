@@ -1,0 +1,43 @@
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+env/
+venv/
+.venv/
+ENV/
+
+# Environment
+.env
+*.env
+
+# Output
+output/
+cache/
+data/
+logs/
+test-audio/
+
+# Models (too large for git)
+*.onnx
+*.bin
+*.safetensors
+*.pt
+*.pth
+*.ckpt
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# OS
+.DS_Store
+Thumbs.db
+
+# YouTube credentials
+client_secrets.json
+youtube_token.json
