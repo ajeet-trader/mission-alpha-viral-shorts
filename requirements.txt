@@ -11,22 +11,21 @@ pyyaml==6.0.1
 # Rich logging & visibility
 rich==13.7.0
 
-# Content scraping
-praw==7.7.1
-beautifulsoup4==4.12.3
-requests==2.31.0
-feedparser==6.0.11
+# Content scraping (optional for TTS testing)
+# praw==7.7.1
+# beautifulsoup4==4.12.3
+requests>=2.31.0
+# feedparser==6.0.11
 
-# AI Providers
-langchain==0.1.6
-langchain-google-genai==0.0.6
-# crewai==0.1.26  # Optional - not needed for TTS testing
+# AI Providers (optional for TTS testing)
+# langchain>=0.1.6
+# langchain-google-genai>=0.0.6
 openai>=1.10.0
 groq>=0.4.0
 
 # TTS Providers
 gTTS==2.5.0
-elevenlabs==0.2.26
+elevenlabs>=0.2.26
 edge-tts>=6.1.0
 pyttsx3>=2.90
 kokoro-onnx>=0.4.0
@@ -44,10 +43,10 @@ torch>=2.0.0
 torchaudio>=2.0.0
 transformers>=4.35.0
 
-# Video processing
-moviepy==1.0.3
-Pillow==10.2.0
-numpy==1.26.3
+# Video processing (optional - not needed for TTS testing)
+# moviepy==1.0.3
+Pillow>=10.2.0
+numpy>=2.0.0
 
 # Audio utilities
 mutagen>=1.47.0
@@ -55,8 +54,8 @@ mutagen>=1.47.0
 # Database (optional - not needed for TTS testing)
 # supabase==2.3.0
 
-# Scheduling
-APScheduler==3.10.4
+# Scheduling (optional)
+# APScheduler==3.10.4
 
 # YouTube upload (optional)
 # google-auth-oauthlib==1.2.0
